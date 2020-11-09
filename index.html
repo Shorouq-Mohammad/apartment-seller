@@ -4,7 +4,8 @@
 <head>
     <title>Selouse</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -35,26 +36,35 @@
     <div id="results"></div>
 
     <script id="seller-template" type="text/x-handlebars-template">
-        {{#each apartments}}
+        {{#if apartments}} {{#each apartments}}
         <div class="result">
             <img src="{{img}}">
-            <p class="l-addr">{{address}}</p>
-            <p class="l-pri">{{price}}</p>
-            <p class="l-rooms">{{rooms}}</p>
+            <label class="label l-addr">Address:</label>
+            <p class="address">{{address}}</p>
+            <label class="label l-price">Price: </label>
+            <p class="price">{{price}}</p>
+            <label class="label l-rooms">Number of rooms: </label>
+            <p class="rooms">{{rooms}}</p>
             {{#if parking}}
-            <p class="l-park">{{parking}}</p>
+            <label class="label l-park">Parking</label>
+            <p class="parking">{{parking}}</p>
             {{/if}} {{#if immediate}}
-            <p class="l-immediate">{{contactDetails.name}} - {{contactDetails.email}}</p>
-            {{/if}}
-        </div>
-        {{/each}}
+            <label class="label l-immediate">Immediate</label>
+            <p class="immediate">{{contactDetails.name}} - {{contactDetails.email}}</p>
+            {{/if}} 
+            < </div>
+                {{/each}}
+                {{else}}
+            <div style="color:black">There is no maching results</div>
+            {{/if}} 
     </script>
 
     <!-- Your Code Here -->
     <!-- You should start doing handlebar stuff here -->
     <!-- Your Code Here -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="apt-data.js"></script>
     <script src="apt-filter.js"></script>
