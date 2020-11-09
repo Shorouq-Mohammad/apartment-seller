@@ -4,8 +4,7 @@
 <head>
     <title>Selouse</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -34,6 +33,22 @@
     <hr>
 
     <div id="results"></div>
+
+    <script id="seller-template" type="text/x-handlebars-template">
+        {{#each apartments}}
+        <div class="result">
+            <img src="{{img}}">
+            <p class="l-addr">{{address}}</p>
+            <p class="l-pri">{{price}}</p>
+            <p class="l-rooms">{{rooms}}</p>
+            {{#if parking}}
+            <p class="l-park">{{parking}}</p>
+            {{/if}} {{#if immediate}}
+            <p class="l-immediate">{{contactDetails.name}} - {{contactDetails.email}}</p>
+            {{/if}}
+        </div>
+        {{/each}}
+    </script>
 
     <!-- Your Code Here -->
     <!-- You should start doing handlebar stuff here -->
